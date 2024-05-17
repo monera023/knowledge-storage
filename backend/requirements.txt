@@ -1,0 +1,4 @@
+tqdm==4.66.1
+notion-client==2.1.0
+python-dotenv==1.0.0
+supabase==2.0.3

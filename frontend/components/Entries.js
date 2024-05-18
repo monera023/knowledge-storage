@@ -7,11 +7,16 @@ function Entry({ title, created, link, type }) {
   const formattedDate = new Date(date).toISOString().split('T')[0];
 
   return (
-    <a href={link} target="_blank" className="flex items-center text-secondary py-1 group text-md">
-      <strong className="font-medium break-word sm:break-normal text-gray-900 group-hover:text-indigo-600 dark:text-gray-100 dark:group-hover:text-indigo-500">{title}</strong>
-      <strong className="flex grow text-center font-medium whitespace-nowrap ml-4 sm:ml-12 group-hover:text-indigo-600 dark:text-gray-100 dark:group-hover:text-indigo-500">{type}</strong>
-      <p className="font-berkeley whitespace-nowrap ml-4 sm:ml-12">{formattedDate}</p>
-    </a>
+      <div className='w-full' style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr auto'
+      }}>
+        <a href={link} target="_blank" className="flex items-center text-secondary py-1 group text-md justify-between">
+          <p className="font-medium break-word sm:break-normal text-gray-900 group-hover:text-indigo-600 basis-2/3 dark:text-gray-100 dark:group-hover:text-indigo-500">{title}</p>
+          <p className="flex grow text-center font-medium whitespace-nowrap ml-4 sm:ml-12 group-hover:text-indigo-600 dark:text-gray-100 dark:group-hover:text-indigo-500">{type}</p>
+        </a>
+        <p className="font-berkeley whitespace-nowrap ml-4 sm:ml-12">{formattedDate}</p>
+      </div>
   );
 }
 
